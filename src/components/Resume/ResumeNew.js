@@ -4,12 +4,14 @@ import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
-import pdfFile from "../../Assets/JUAN CASTRO RODRÍGUEZ_ES_CV.pdf";
+import pdfES from "../../Assets/JUAN CASTRO RODRÍGUEZ_ES_CV.pdf";
+import pdfEN from "../../Assets/JUAN CASTRO RODRÍGUEZ_EN_CV.pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeViewer() {
+  const [lang, setLang] = useState("en");
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [width, setWidth] = useState(window.innerWidth);
@@ -20,21 +22,58 @@ function ResumeViewer() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    setPageNumber(1);
+  }, [lang]);
+
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
     setPageNumber(1);
   };
+
+  const pdfFile = lang === "es" ? pdfES : pdfEN;
+
+  // Textos según idioma
+  const texts = {
+    es: {
+      switchLangBtn: "Ver en Inglés",
+      downloadBtn: "Descargar CV",
+      nextBtn: "Siguiente",
+      prevBtn: "Anterior",
+      pageInfo: `Página ${pageNumber} de ${numPages || "--"}`,
+    },
+    en: {
+      switchLangBtn: "View in Spanish",
+      downloadBtn: "Download CV",
+      nextBtn: "Next",
+      prevBtn: "Previous",
+      pageInfo: `Page ${pageNumber} of ${numPages || "--"}`,
+    },
+  };
+
+  const t = texts[lang];
 
   return (
     <div>
       <Container fluid className="resume-section">
         <Particle />
 
+        {/* Botón para cambiar idioma */}
+        <Row style={{ justifyContent: "center", position: "relative", margin: "20px 0" }}>
+          <Button
+            variant="secondary"
+            onClick={() => setLang(lang === "es" ? "en" : "es")}
+            style={{ maxWidth: "250px" }}
+          >
+            {t.switchLangBtn}
+          </Button>
+        </Row>
+
         {/* Botón descargar arriba */}
         <Row style={{ justifyContent: "center", position: "relative", margin: "20px 0" }}>
           <Button variant="primary" href={pdfFile} target="_blank" style={{ maxWidth: "250px" }}>
             <AiOutlineDownload />
-            &nbsp;Download CV
+            &nbsp;{t.downloadBtn}
           </Button>
         </Row>
 
@@ -45,7 +84,7 @@ function ResumeViewer() {
           </Document>
         </Row>
 
-        {/* Navegación con botones con mismo estilo que Download CV */}
+        {/* Navegación con botones */}
         <Row
           style={{
             justifyContent: "center",
@@ -56,29 +95,26 @@ function ResumeViewer() {
             gap: "15px",
           }}
         >
-          {/* Botón Siguiente a la izquierda */}
           <Button
             variant="primary"
             onClick={() => setPageNumber((p) => Math.min(p + 1, numPages))}
             disabled={pageNumber === numPages}
             style={{ maxWidth: "250px", flexGrow: 1 }}
           >
-            Siguiente <AiOutlineRight style={{ marginLeft: "8px" }} />
+            {t.nextBtn} <AiOutlineRight style={{ marginLeft: "8px" }} />
           </Button>
 
-          {/* Texto central */}
           <span style={{ color: "#555", fontWeight: "600", minWidth: "150px", textAlign: "center" }}>
-            Página {pageNumber} de {numPages || "--"}
+            {t.pageInfo}
           </span>
 
-          {/* Botón Anterior a la derecha */}
           <Button
             variant="primary"
             onClick={() => setPageNumber((p) => Math.max(p - 1, 1))}
             disabled={pageNumber === 1}
             style={{ maxWidth: "250px", flexGrow: 1 }}
           >
-            <AiOutlineLeft style={{ marginRight: "8px" }} /> Anterior
+            <AiOutlineLeft style={{ marginRight: "8px" }} /> {t.prevBtn}
           </Button>
         </Row>
 
@@ -86,7 +122,7 @@ function ResumeViewer() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button variant="primary" href={pdfFile} target="_blank" style={{ maxWidth: "250px" }}>
             <AiOutlineDownload />
-            &nbsp;Download CV
+            &nbsp;{t.downloadBtn}
           </Button>
         </Row>
       </Container>
