@@ -1,9 +1,10 @@
 <h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
+  Portfolio Website - v1.0<br/>
+  <a href="https://mi-portfolio-juancastro.vercel.app/" target="_blank">mi-portfolio-juancastro.vercel.app</a>
 </h2>
+
 <div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
+  <img alt="Demo" src="./Images/preview.PNG" />
 </div>
 
 <br/>
@@ -13,48 +14,51 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/juancastro23/mi-portfolio?color=blue&logo=github&style=for-the-badge) &nbsp;
+![GitHub forks](https://img.shields.io/github/forks/juancastro23/mi-portfolio?color=blue&logo=github&style=for-the-badge)
 
 </center>
 
 <h3 align="center">
     🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
+    <a href="https://github.com/juancastro23/mi-portfolio/issues">Report Bug</a> &nbsp; &nbsp;
     🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Request Feature</a>
+    <a href="https://github.com/juancastro23/mi-portfolio/issues">Request Feature</a>
 </h3>
 
-## TL;DR
+---
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Soumyajit4419](https://github.com/soumyajit4419/Portfolio). Thanks!
+## 🚀 About
 
-## Built With
+This is my personal portfolio website — **Juan Castro Portfolio v1.0**, built to showcase my projects, skills, and experience as a **Full-Stack Web & Mobile Developer**.  
+It includes featured projects, a contact section, and smooth animations for a modern user experience.
 
-My personal portfolio <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+---
 
-This project was built using these technologies.
+## 🧰 Built With
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+This project was developed using the following technologies:
 
-## Features
+- ⚛️ React.js  
+- 🟩 Node.js  
+- 🎨 CSS3  
+- 💻 Visual Studio Code  
+- ☁️ Vercel (for deployment)
 
-**📖 Multi-Page Layout**
+---
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+## ✨ Features
 
-**📱 Fully Responsive**
+**📄 Multi-Page Layout**  
+**🎨 Styled with React-Bootstrap and CSS — easily customizable**  
+**📱 Fully Responsive Design**  
+**⚡ Fast and Lightweight**  
 
-## Getting Started
+---
 
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+## 🛠 Installation and Setup
 
-## 🛠 Installation and Setup Instructions
+Clone this repository and install dependencies:
 
 1. Installation: `npm install`
 
@@ -73,5 +77,5 @@ You will find all the components used and you can edit your information accordin
 
 Give a ⭐ if you like this website!
 
-<a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
+<a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"></a>
 "# mi-portfolio" 
